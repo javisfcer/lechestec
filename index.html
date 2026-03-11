@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lácteos Cerca</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #eef7ff, #ffffff);
       color: #1f2937;
     }
+
     header {
       background: linear-gradient(90deg, #2563eb, #38bdf8);
       color: white;
@@ -18,32 +25,40 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
       position: sticky;
       top: 0;
       z-index: 10;
     }
-    header h1 { font-size: 1.5rem; }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 16px;
       font-weight: bold;
     }
+
     .hero {
       padding: 48px 24px 28px;
       text-align: center;
     }
+
     .hero h2 {
       font-size: 2rem;
       margin-bottom: 10px;
     }
+
     .hero p {
       max-width: 700px;
       margin: 0 auto;
       color: #4b5563;
       line-height: 1.6;
     }
+
     .tabs {
       display: flex;
       justify-content: center;
@@ -51,6 +66,7 @@
       margin: 28px 0;
       flex-wrap: wrap;
     }
+
     .tab-btn {
       border: none;
       background: white;
@@ -59,12 +75,14 @@
       border-radius: 999px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(37,99,235,0.12);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
     }
+
     .tab-btn.active {
       background: #2563eb;
       color: white;
     }
+
     .section {
       display: none;
       width: min(1100px, 92%);
@@ -74,37 +92,55 @@
       padding: 24px;
       box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
     }
-    .section.active { display: block; }
+
+    .section.active {
+      display: block;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
+
     .card {
       background: #f8fbff;
       border: 1px solid #dbeafe;
       border-radius: 18px;
       padding: 20px;
     }
+
     .card h3 {
       margin-bottom: 14px;
       color: #1d4ed8;
     }
-    .field { margin-bottom: 14px; }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
     label {
       display: block;
       margin-bottom: 6px;
       font-weight: bold;
       color: #374151;
     }
-    input, select, textarea {
+
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 12px;
       border: 1px solid #cbd5e1;
       border-radius: 12px;
       font-size: 0.95rem;
     }
-    textarea { min-height: 88px; resize: vertical; }
+
+    textarea {
+      min-height: 88px;
+      resize: vertical;
+    }
+
     .btn {
       border: none;
       background: #2563eb;
@@ -114,16 +150,19 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     .btn.secondary {
       background: #e0f2fe;
       color: #0369a1;
     }
+
     .map-toolbar {
       display: flex;
       gap: 12px;
       margin-bottom: 16px;
       flex-wrap: wrap;
     }
+
     .map-box {
       position: relative;
       background: linear-gradient(180deg, #dbeafe, #eff6ff);
@@ -132,22 +171,46 @@
       overflow: hidden;
       border: 2px solid #bfdbfe;
     }
+
     .fake-grid {
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(37,99,235,0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37,99,235,0.10) 1px, transparent 1px);
+        linear-gradient(rgba(37, 99, 235, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.10) 1px, transparent 1px);
       background-size: 60px 60px;
     }
+
     .road {
       position: absolute;
       background: rgba(148, 163, 184, 0.7);
       border-radius: 999px;
     }
-    .road.one { width: 120%; height: 16px; top: 45%; left: -10%; transform: rotate(-8deg); }
-    .road.two { width: 14px; height: 120%; top: -10%; left: 52%; transform: rotate(12deg); }
-    .road.three { width: 60%; height: 14px; top: 22%; left: 18%; transform: rotate(20deg); }
+
+    .road.one {
+      width: 120%;
+      height: 16px;
+      top: 45%;
+      left: -10%;
+      transform: rotate(-8deg);
+    }
+
+    .road.two {
+      width: 14px;
+      height: 120%;
+      top: -10%;
+      left: 52%;
+      transform: rotate(12deg);
+    }
+
+    .road.three {
+      width: 60%;
+      height: 14px;
+      top: 22%;
+      left: 18%;
+      transform: rotate(20deg);
+    }
+
     .marker {
       position: absolute;
       width: 18px;
@@ -155,8 +218,9 @@
       background: #ef4444;
       border: 3px solid white;
       border-radius: 50%;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
+
     .marker::after {
       content: attr(data-name);
       position: absolute;
@@ -167,26 +231,30 @@
       border-radius: 10px;
       font-size: 0.8rem;
       white-space: nowrap;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
       color: #1f2937;
     }
+
     .customer-box {
       margin-top: 18px;
       display: grid;
       grid-template-columns: 1fr 280px;
       gap: 20px;
     }
+
     .store-list {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
+
     .store-item {
       border: 1px solid #dbeafe;
       border-radius: 14px;
       padding: 14px;
       background: #f8fbff;
     }
+
     .badge {
       display: inline-block;
       background: #dcfce7;
@@ -197,16 +265,21 @@
       font-weight: bold;
       margin-top: 8px;
     }
+
     footer {
       text-align: center;
       color: #6b7280;
       padding: 20px;
       font-size: 0.92rem;
     }
+
     @media (max-width: 900px) {
-      .grid, .customer-box {
+
+      .grid,
+      .customer-box {
         grid-template-columns: 1fr;
       }
+
       header {
         flex-direction: column;
         gap: 10px;
@@ -214,6 +287,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>🥛 Lácteos Cerca</h1>
@@ -225,10 +299,10 @@
   </header>
 
   <section class="hero">
-    <h2>Boceto visual de una tienda de lácteos con mapa</h2>
+    <h2>Plataforma de conexión para lácteos locales</h2>
     <p>
-      Esta es una simulación en HTML para mostrar cómo podría verse tu página web.
-      No guarda datos reales: solo enseña el diseño para vendedor y comprador.
+      Conecta fácilmente a vendedores y compradores de productos lácteos frescos.
+      Nuestra plataforma optimiza la distribución y facilita el encuentro en tu zona.
     </p>
   </section>
 
@@ -338,7 +412,7 @@
   </section>
 
   <footer>
-    Boceto visual en HTML · Sin base de datos · Ideal para después mejorarlo en Antigravity
+    &copy; 2026 Lácteos Cerca. Todos los derechos reservados.
   </footer>
 
   <script>
@@ -355,4 +429,5 @@
     }
   </script>
 </body>
+
 </html>
