@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lácteos Cerca - Panel de Vendedor</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>🥛 Lácteos Cerca</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="vendedor.html" class="active-nav">Vendedor</a>
+            <a href="comprador.html">Comprador</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Panel de Vendedor</h2>
+            <p>Administra tu tienda, productos y aumenta tus ventas.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Registrar tienda</h3>
+                <form id="store-form">
+                    <div class="field">
+                        <label>Nombre de la tienda</label>
+                        <input type="text" placeholder="Ej. Lácteos Don José" required />
+                    </div>
+                    <div class="field">
+                        <label>Dirección física</label>
+                        <input type="text" placeholder="Ej. Av. Sendero 123, Monterrey" required />
+                    </div>
+                    <div class="field">
+                        <label>Tipo de negocio</label>
+                        <select required>
+                            <option value="" disabled selected>Selecciona un tipo...</option>
+                            <option>Miscelánea</option>
+                            <option>Cremería especializada</option>
+                            <option>Tienda local</option>
+                            <option>Mini súper</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Descripción corta</label>
+                        <textarea
+                            placeholder="Ej. Venta de leche bronca, queso, crema, yogurt y mantequilla artesanal..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Guardar perfil de tienda</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Registrar productos</h3>
+                <form id="product-form">
+                    <div class="field">
+                        <label>Categoría de Producto</label>
+                        <select required>
+                            <option value="" disabled selected>Selecciona un producto...</option>
+                            <option>Leche entera fresca</option>
+                            <option>Queso panela</option>
+                            <option>Queso manchego</option>
+                            <option>Yogurt natural</option>
+                            <option>Crema artesanal</option>
+                            <option>Mantequilla</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Cantidad en stock (Unidades)</label>
+                        <input type="number" min="0" placeholder="Ej. 25" required />
+                    </div>
+                    <div class="field">
+                        <label>Precio de venta</label>
+                        <input type="text" placeholder="Ej. $38.00 MXN" required />
+                    </div>
+                    <div class="field">
+                        <label>Notas adicionales</label>
+                        <textarea
+                            placeholder="Ej. Descuento si compras más de 5 unidades. Solo venta menudeo."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Agregar producto al inventario</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Lácteos Cerca. Todos los derechos reservados.
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

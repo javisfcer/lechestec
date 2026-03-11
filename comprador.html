@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lácteos Cerca - Panel de Comprador</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>🥛 Lácteos Cerca</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="vendedor.html">Vendedor</a>
+            <a href="comprador.html" class="active-nav">Comprador</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Encuentra productos cerca de ti</h2>
+            <p>Busca lácteos frescos en tu zona a través del mapa interactivo.</p>
+        </div>
+
+        <div class="card">
+            <div class="map-toolbar">
+                <input type="text" placeholder="Buscar producto... Ej. queso, leche, yogurt" class="search-input" />
+                <button class="btn">Usar mi ubicación</button>
+                <button class="btn btn-secondary">Filtrar por tipo</button>
+            </div>
+
+            <div class="customer-box">
+                <div class="map-box" id="mapa-visual">
+                    <div class="fake-grid"></div>
+                    <div class="road one"></div>
+                    <div class="road two"></div>
+                    <div class="road three"></div>
+
+                    <!-- Marcadores de ejemplo -->
+                    <div class="marker tooltip" data-name="Lácteos San Juan" style="top: 26%; left: 28%;"></div>
+                    <div class="marker tooltip" data-name="Quesos La Vaquita" style="top: 52%; left: 58%;"></div>
+                    <div class="marker tooltip" data-name="Cremería El Prado" style="top: 64%; left: 34%;"></div>
+
+                    <!-- Ubicacion del usuario -->
+                    <div class="marker current-location tooltip" data-name="Mi ubicación actual"
+                        style="top: 44%; left: 46%;"></div>
+                </div>
+
+                <div class="store-list">
+                    <div class="store-item">
+                        <strong>Lácteos San Juan</strong>
+                        <p>Leche, yogurt y crema artesanal.</p>
+                        <span class="badge">A 1.2 km</span>
+                    </div>
+                    <div class="store-item">
+                        <strong>Quesos La Vaquita</strong>
+                        <p>Queso panela fresco, manchego local y mantequilla.</p>
+                        <span class="badge">A 2.0 km</span>
+                    </div>
+                    <div class="store-item">
+                        <strong>Cremería El Prado</strong>
+                        <p>Leche entera, crema y variedad de quesos frescos.</p>
+                        <span class="badge">A 2.8 km</span>
+                    </div>
+                    <div class="store-item">
+                        <strong>Minisúper Las Palmas</strong>
+                        <p>Yogurt bebible, queso asadero y leche deslactosada.</p>
+                        <span class="badge">A 3.5 km</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Lácteos Cerca. Todos los derechos reservados.
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
