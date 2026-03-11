@@ -108,7 +108,7 @@ nav a.active-nav {
 }
 
 .hero-index {
-  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('../img/fondo.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('../img/fondo.png') center/cover no-repeat;
   border-radius: var(--border-radius-lg);
   margin: 20px;
   box-shadow: var(--card-shadow);
