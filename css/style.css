@@ -15,7 +15,11 @@
   --border-radius-lg: 20px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -34,14 +38,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-header h1 { 
-  font-size: 1.5rem; 
+header h1 {
+  font-size: 1.5rem;
   margin: 0;
   font-weight: 700;
   letter-spacing: -0.5px;
@@ -62,7 +66,8 @@ nav a {
   font-size: 0.95rem;
 }
 
-nav a:hover, nav a.active-nav {
+nav a:hover,
+nav a.active-nav {
   background: rgba(255, 255, 255, 0.25);
   color: white;
 }
@@ -102,6 +107,13 @@ nav a:hover, nav a.active-nav {
   align-items: center;
 }
 
+.hero-index {
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('../img/fondo.jpg') center/cover no-repeat;
+  border-radius: var(--border-radius-lg);
+  margin: 20px;
+  box-shadow: var(--card-shadow);
+}
+
 .hero h2 {
   font-size: 3rem;
   margin-bottom: 20px;
@@ -136,7 +148,7 @@ nav a:hover, nav a.active-nav {
   border-radius: var(--border-radius-lg);
   padding: 32px;
   box-shadow: var(--card-shadow);
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .card h3 {
@@ -147,7 +159,9 @@ nav a:hover, nav a.active-nav {
   border-bottom: 2px solid var(--secondary);
 }
 
-.field { margin-bottom: 20px; }
+.field {
+  margin-bottom: 20px;
+}
 
 label {
   display: block;
@@ -157,7 +171,9 @@ label {
   font-size: 0.95rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 12px 16px;
   border: 1px solid var(--border-color);
@@ -168,18 +184,24 @@ input, select, textarea {
   color: var(--text-main);
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #94a3b8;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
   background: white;
 }
 
-textarea { min-height: 110px; resize: vertical; }
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
 
 /* Buttons */
 .btn {
@@ -200,14 +222,14 @@ textarea { min-height: 110px; resize: vertical; }
 .btn:hover {
   background: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 .btn-large {
   padding: 16px 32px;
   font-size: 1.15rem;
   border-radius: 999px;
-  box-shadow: 0 8px 20px rgba(37,99,235,0.2);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
 }
 
 .btn-outline {
@@ -265,8 +287,8 @@ textarea { min-height: 110px; resize: vertical; }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(37,99,235,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37,99,235,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
@@ -276,9 +298,29 @@ textarea { min-height: 110px; resize: vertical; }
   border-radius: 999px;
 }
 
-.road.one { width: 150%; height: 24px; top: 45%; left: -20%; transform: rotate(-8deg); }
-.road.two { width: 22px; height: 150%; top: -20%; left: 52%; transform: rotate(12deg); }
-.road.three { width: 80%; height: 20px; top: 22%; left: 10%; transform: rotate(20deg); }
+.road.one {
+  width: 150%;
+  height: 24px;
+  top: 45%;
+  left: -20%;
+  transform: rotate(-8deg);
+}
+
+.road.two {
+  width: 22px;
+  height: 150%;
+  top: -20%;
+  left: 52%;
+  transform: rotate(12deg);
+}
+
+.road.three {
+  width: 80%;
+  height: 20px;
+  top: 22%;
+  left: 10%;
+  transform: rotate(20deg);
+}
 
 .marker {
   position: absolute;
@@ -287,7 +329,7 @@ textarea { min-height: 110px; resize: vertical; }
   background: #ef4444;
   border: 3px solid white;
   border-radius: 50%;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   z-index: 2;
@@ -315,7 +357,7 @@ textarea { min-height: 110px; resize: vertical; }
   font-size: 0.85rem;
   font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
@@ -340,12 +382,14 @@ textarea { min-height: 110px; resize: vertical; }
 .store-list::-webkit-scrollbar {
   width: 6px;
 }
+
 .store-list::-webkit-scrollbar-track {
-  background: #f1f5f9; 
+  background: #f1f5f9;
   border-radius: 4px;
 }
+
 .store-list::-webkit-scrollbar-thumb {
-  background: #cbd5e1; 
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
@@ -400,30 +444,32 @@ footer {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .grid, .customer-box {
+
+  .grid,
+  .customer-box {
     grid-template-columns: 1fr;
   }
-  
+
   header {
     flex-direction: column;
     gap: 16px;
     padding: 20px;
   }
-  
+
   nav {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   .map-box {
     height: 350px;
   }
-  
+
   .hero h2 {
     font-size: 2.2rem;
   }
-  
+
   .card {
     padding: 24px;
   }
